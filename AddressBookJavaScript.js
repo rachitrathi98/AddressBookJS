@@ -100,9 +100,12 @@ AddressBookArray.push(new Contacts("Vishal","Singh","MallRoad","Shimla","Himacha
 console.log("Contacts in Addressbook Array are: ")
 console.log(AddressBookArray.toString());
 
-//Finding contatcts
+//UC4: Finding contatcts and updating
 let checkIfPresent = AddressBookArray.findIndex(contact=>contact.firstName=="Parth");
 AddressBookArray[checkIfPresent].phoneNumber=919890045068;//Updating Contact
+
+//UC5: Deleting Contact by name
+AddressBookArray.splice([checkIfPresent],1);
 console.log(AddressBookArray.toString());
 }
 catch(e){
