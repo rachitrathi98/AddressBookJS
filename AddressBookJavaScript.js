@@ -108,6 +108,7 @@ AddressBookArray[checkIfPresent].phoneNumber=919890045068;//Updating Contact
 AddressBookArray.splice([checkIfPresent],1);
 console.log(AddressBookArray.toString());
 
+//UC6: Check the number of contacts in the array
 var contactCount=0;
     function totalContacts(AddressBookArray)
     {
@@ -117,6 +118,13 @@ var contactCount=0;
     }
     AddressBookArray.reduce(totalContacts,1);
     console.log("Total count of contacts is: "+contactCount);
+
+    //UC7: Check for duplicate contacts 
+    let contactNew=new Contacts("Rachit","Sharma","Juhu","Mumbai","Maharashtra",400054,919004025062,"rachit@gmail.com");
+     if(AddressBookArray.find(contact=>contactNew.firstName==contactNew.firstName))
+     throw "Contact already exists";
+    else
+    AddressBookArray.push(contactNew);
 }
 catch(e){
     console.log(e);
