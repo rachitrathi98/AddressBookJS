@@ -107,6 +107,16 @@ AddressBookArray[checkIfPresent].phoneNumber=919890045068;//Updating Contact
 //UC5: Deleting Contact by name
 AddressBookArray.splice([checkIfPresent],1);
 console.log(AddressBookArray.toString());
+
+var contactCount=0;
+    function totalContacts(AddressBookArray)
+    {
+       if(AddressBookArray!=null)
+       contactCount++;
+       return contactCount;
+    }
+    AddressBookArray.reduce(totalContacts,1);
+    console.log("Total count of contacts is: "+contactCount);
 }
 catch(e){
     console.log(e);
