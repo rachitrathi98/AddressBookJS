@@ -96,6 +96,7 @@ console.log(contact.toString());
 let AddressBookArray = new Array();
 AddressBookArray.push(new Contacts("Mohit","Rathi","Goregaon","Mumbai","Maharashtra",416115,919004025066,"mohit@gmail.com"));
 AddressBookArray.push(new Contacts("Parth","Sharma","Eden","Kolkata","WestBengal",416116,919004025067,"parth@gmail.com"));
+AddressBookArray.push(new Contacts("Mohan","Patil","Jamnagar","Rajkot","Gujarat",416110,919004025064,"mohan@gmail.com"));
 AddressBookArray.push(new Contacts("Vishal","Singh","MallRoad","Shimla","HimachalPradesh",416117,919004025068,"vishal@gmail.com"));
 console.log("Contacts in Addressbook Array are: ")
 console.log(AddressBookArray.toString());
@@ -125,6 +126,10 @@ var contactCount=0;
      throw "Contact already exists";
     else
     AddressBookArray.push(contactNew);
+
+    //UC8: Search Contact by city or state
+    AddressBookArray.filter(contact=>contact.city.includes("Mumbai")).forEach(contact=>console.log(contact.toString()));
+    
 }
 catch(e){
     console.log(e);
