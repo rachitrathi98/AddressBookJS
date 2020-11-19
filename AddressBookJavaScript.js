@@ -121,15 +121,23 @@ var contactCount=0;
     console.log("Total count of contacts is: "+contactCount);
 
     //UC7: Check for duplicate contacts 
-    let contactNew=new Contacts("Rachit","Sharma","Juhu","Mumbai","Maharashtra",400054,919004025062,"rachit@gmail.com");
+    /*let contactNew=new Contacts("Rachit","Sharma","Juhu","Mumbai","Maharashtra",400054,919004025062,"rachit@gmail.com");
      if(AddressBookArray.find(contact=>contactNew.firstName==contactNew.firstName))
      throw "Contact already exists";
     else
-    AddressBookArray.push(contactNew);
+    AddressBookArray.push(contactNew);*/
 
     //UC8: Search Contact by city or state
     AddressBookArray.filter(contact=>contact.city.includes("Mumbai")).forEach(contact=>console.log(contact.toString()));
     
+    //UC9
+    let ContactMap=new Map();
+    AddressBookArray.forEach(contact=>ContactMap.set(contact.firstName, contact.state));
+    ContactMap.forEach( (value,key,map) => 
+    { 
+        if (value == "Maharashtra") 
+            console.log("The person from Maharashtra is: ", key);
+    }); 
 }
 catch(e){
     console.log(e);
