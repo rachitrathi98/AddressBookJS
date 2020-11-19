@@ -98,6 +98,7 @@ AddressBookArray.push(new Contacts("Mohit","Rathi","Goregaon","Mumbai","Maharash
 AddressBookArray.push(new Contacts("Parth","Sharma","Eden","Kolkata","WestBengal",416116,919004025067,"parth@gmail.com"));
 AddressBookArray.push(new Contacts("Mohan","Patil","Jamnagar","Rajkot","Gujarat",416110,919004025064,"mohan@gmail.com"));
 AddressBookArray.push(new Contacts("Vishal","Singh","MallRoad","Shimla","HimachalPradesh",416117,919004025068,"vishal@gmail.com"));
+AddressBookArray.push(new Contacts("Rahul","Trivedi","Baner","Pune","Maharashtra",416901,919004025098,"rahul@gmail.com"));
 console.log("Contacts in Addressbook Array are: ")
 console.log(AddressBookArray.toString());
 
@@ -138,6 +139,14 @@ var contactCount=0;
         if (value == "Maharashtra") 
             console.log("The person from Maharashtra is: ", key);
     }); 
+
+    //UC10: Get person count by city or state
+    function PersonCountByState(State)
+    {
+    let countByState = AddressBookArray.reduce(((count,contact) => {if(contact.state == State) return count+1; return count;}),0);
+    return countByState;
+    }
+    console.log("The number of contacts in Maharshtra are: "+PersonCountByState("Maharashtra"));
 }
 catch(e){
     console.log(e);
