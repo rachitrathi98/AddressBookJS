@@ -147,6 +147,13 @@ var contactCount=0;
     return countByState;
     }
     console.log("The number of contacts in Maharshtra are: "+PersonCountByState("Maharashtra"));
+    
+    //UC11: Sort Entries alphabetically
+    
+        let sortedbyPerson = AddressBookArray;
+        sortedbyPerson.sort((a, b) => a.firstName.localeCompare(b.firstName));
+        console.log("Sorted Contacts are as follows");
+        sortedbyPerson.forEach(p => console.log(p.toString()));
 }
 
 catch(e){
