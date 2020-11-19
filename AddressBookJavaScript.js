@@ -85,18 +85,24 @@ class Contacts
 
     toString()
     {
-        return this.firstName+" "+this.lastName; 
+        return this.firstName+" "+this.lastName+" "+this.phoneNumber; 
     }
 }
 try{
 let contact=new Contacts("Rachit","Rathi","Juhu","Mumbai","Maharashtra",400054,919004025062,"rachit@gmail.com");
 console.log("Contacts are as follows");
 console.log(contact.toString());
+
 let AddressBookArray = new Array();
 AddressBookArray.push(new Contacts("Mohit","Rathi","Goregaon","Mumbai","Maharashtra",416115,919004025066,"mohit@gmail.com"));
 AddressBookArray.push(new Contacts("Parth","Sharma","Eden","Kolkata","WestBengal",416116,919004025067,"parth@gmail.com"));
 AddressBookArray.push(new Contacts("Vishal","Singh","MallRoad","Shimla","HimachalPradesh",416117,919004025068,"vishal@gmail.com"));
 console.log("Contacts in Addressbook Array are: ")
+console.log(AddressBookArray.toString());
+
+//Finding contatcts
+let checkIfPresent = AddressBookArray.findIndex(contact=>contact.firstName=="Parth");
+AddressBookArray[checkIfPresent].phoneNumber=919890045068;//Updating Contact
 console.log(AddressBookArray.toString());
 }
 catch(e){
